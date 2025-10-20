@@ -20,6 +20,32 @@ I managed a full-stack analytics pipeline, covering **data ingestion, transforma
 
 ---
 
+## Project DAG (Data Lineage Flow)
+
+
+Below is the full **dbt project DAG (Directed Acyclic Graph)**, illustrating how raw event data flows through each transformation layer:
+
+- ✅ **Source Tables** (green nodes)  
+  Represent raw data ingested from Google Analytics into Snowflake. This is the single source of truth for all events.
+
+- ✅ **Staging Models**  
+  Clean, standardize, and prepare the raw data for downstream transformations. Includes validation for duplicates, nulls, and consistency.
+
+- ✅ **Dimension and Fact Models**  
+  Capture key business entities (dimensions) and metrics (facts), such as users, sessions, engagement, and conversions.
+
+- ✅ **Aggregate Models**  
+  Summarize metrics and KPIs to support efficient **Tableau dashboards** and analytics reporting.
+
+**Summary:**  
+The DAG reflects a **classic ETL workflow**: raw ingestion → clean staging → facts and dimensions → aggregates. This structure ensures reliable metrics, traceable transformations, and actionable insights for stakeholders.
+
+
+## dbt Project DAG <img width="1420" height="861" alt="dbt-dag (1)" src="https://github.com/user-attachments/assets/296b0e3a-defa-4e75-9c31-dfbe155014db" />
+
+
+---
+
 ## Workflow
 
 ### 1. Data Ingestion
@@ -33,6 +59,7 @@ I managed a full-stack analytics pipeline, covering **data ingestion, transforma
 ### 3. Data Visualization
 - Developed interactive **Tableau dashboards** to track user behavior, monitor campaign performance, and analyze conversion paths.  
 - Enabled stakeholders to explore insights dynamically, supporting data-driven decision-making.
+- 👉 [View the Published Tableau Dashboards](https://public.tableau.com/views/MarketingPerformance_17609641897590/WebTraffic?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
