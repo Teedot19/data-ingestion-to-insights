@@ -1,28 +1,57 @@
-# Turning Raw Clicks into Actionable Insights
+# Turning Raw Clicks into Actionable Insights 🚀
 
-I recently managed an end-to-end analytics engineering project for Google Analytics event data, taking it from ingestion to insight.
+This project showcases an **end-to-end analytics engineering workflow** for Google Analytics event data, transforming raw clickstream data into actionable business insights.
+
+---
+
+## Project Overview
+I managed a full-stack analytics pipeline, covering **data ingestion, transformation, and visualization**, with the goal of understanding user behavior, optimizing campaigns, and uncovering actionable insights.
+
+---
 
 ## Workflow
 
-### Ingestion
-Pulled data using Airbyte into Snowflake, with incremental syncs for efficiency.
+### 1. Data Ingestion
+- Pulled raw event data from Google Analytics using **Airbyte**.  
+- Loaded data into **Snowflake** with **incremental syncs** for efficiency and scalability.
 
-### Transformation
-Cleaned and structured data in dbt, creating staging and mart layers for metrics like engagement rate, funnel drop-offs, and session value.  
-Added dbt tests to validate data quality, checking for duplicates, null values, and consistency across sessions and users.
+### 2. Data Transformation
+- Processed and structured data in **dbt**, building **staging** and **mart layers** for key metrics such as engagement rate, funnel drop-offs, and session value.  
+- Implemented **dbt tests** to ensure data quality, checking for duplicates, null values, and consistency across sessions and users.
 
-### Visualization
-Built Tableau dashboards to track user behavior, campaign performance, and conversion paths.
+### 3. Data Visualization
+- Developed interactive **Tableau dashboards** to track user behavior, monitor campaign performance, and analyze conversion paths.  
+- Enabled stakeholders to explore insights dynamically, supporting data-driven decision-making.
 
-## Key Learnings
-- High-click campaigns weren’t always converting — landing pages needed optimization.  
-- Engagement dropped sharply after a specific interaction, revealing friction points.  
-- A small segment of users drove high-value sessions, showing potential for personalized targeting.
+---
+
+## Key Insights
+- High-click campaigns didn’t always convert — indicating landing page optimization opportunities.  
+- Engagement dropped sharply after specific interactions, highlighting friction points in the user journey.  
+- A small segment of users contributed disproportionately to high-value sessions, presenting opportunities for **personalized targeting**.
+
+---
 
 ## Next Steps / Future Enhancements
-- Add event-level anomaly detection to proactively flag unusual traffic or drop-offs.  
-- Track multi-touch attribution to better understand campaign contributions.  
-- Expand product-level insights to include revenue per product variant or category over time.
+- Implement **event-level anomaly detection** to proactively flag unusual traffic patterns or drop-offs.  
+- Track **multi-touch attribution** to better understand campaign contributions across the user journey.  
+- Expand product-level insights to include **revenue per product variant or category over time**, supporting deeper business strategy.
 
-## Summary
-As a data analyst with analytics engineering experience, this project reinforced that **clean, well-structured data**, combined with **automated tests**, enables teams to trust their metrics and turn data into actionable business decisions.
+---
+
+## Takeaways
+This project reinforced the importance of **clean, well-structured data** and **automated testing** in analytics engineering. By building a reliable data pipeline, teams can **trust metrics**, uncover actionable insights, and make **data-driven business decisions** with confidence.
+
+---
+
+## Tech Stack
+- **Data Ingestion:** Airbyte  
+- **Data Warehouse:** Snowflake  
+- **Transformation:** dbt (Data Build Tool)  
+- **Visualization:** Tableau  
+- **Data Quality:** dbt tests (duplicates, nulls, consistency)
+
+---
+
+## 📈 Outcome
+The project successfully transformed raw clickstream data into a trusted analytics workflow, providing actionable insights for campaign optimization, user behavior analysis, and strategic decision-making.
