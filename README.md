@@ -1,20 +1,28 @@
-<<<<<<< HEAD
-Welcome to your new dbt project!
+# Turning Raw Clicks into Actionable Insights
 
-### Using the starter project
+I recently managed an end-to-end analytics engineering project for Google Analytics event data, taking it from ingestion to insight.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Workflow
 
+### Ingestion
+Pulled data using Airbyte into Snowflake, with incremental syncs for efficiency.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
-=======
-# data-ingestion-to-insights
-An end-to-end data pipeline demonstrating ingestion, transformation, analysis, and insights generation.
->>>>>>> b4914ec7169d23d9c5e462ea8bdf7c4589bb4229
+### Transformation
+Cleaned and structured data in dbt, creating staging and mart layers for metrics like engagement rate, funnel drop-offs, and session value.  
+Added dbt tests to validate data quality, checking for duplicates, null values, and consistency across sessions and users.
+
+### Visualization
+Built Tableau dashboards to track user behavior, campaign performance, and conversion paths.
+
+## Key Learnings
+- High-click campaigns weren’t always converting — landing pages needed optimization.  
+- Engagement dropped sharply after a specific interaction, revealing friction points.  
+- A small segment of users drove high-value sessions, showing potential for personalized targeting.
+
+## Next Steps / Future Enhancements
+- Add event-level anomaly detection to proactively flag unusual traffic or drop-offs.  
+- Track multi-touch attribution to better understand campaign contributions.  
+- Expand product-level insights to include revenue per product variant or category over time.
+
+## Summary
+As a data analyst with analytics engineering experience, this project reinforced that **clean, well-structured data**, combined with **automated tests**, enables teams to trust their metrics and turn data into actionable business decisions.
