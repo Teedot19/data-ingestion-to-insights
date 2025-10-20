@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_session  # Replace with your actual model filename
+    description: >
+      Dimension/fact-lite table capturing unique sessions per user.
+      Includes session start time, traffic source, campaign, and direct/indirect flag.
+
+    columns:
+      - name: session_id
+        description: Unique identifier for the session.
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: Foreign key to dim_user.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_user')
+                field: user_id
+
+      - name: session_start_time
+        description: Start time of the session.
+        tests:
+          - not_null
+
+      - name: source
+        description: Traffic source for the session.
+
+      - name: medium
+        description: Traffic medium for the session.
+
+      - name: campaign
+        description: Campaign associated with the session.
+
+      - name: is_true_direct
+        description: Boolean flag indicating direct traffic.
+        tests:
+          - not_null

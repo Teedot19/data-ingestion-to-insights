@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: dim_user  # Use a conventional dimension table name
+    description: >
+      Dimension table capturing unique users with geographic and device information
+      aggregated from GA hits.
+
+    columns:
+      - name: user_id
+        description: Unique identifier for each user.
+        tests:
+          - not_null
+          - unique
+
+      - name: country
+        description: Country associated with the user.
+        tests:
+          - not_null
+
+      - name: subcontinent
+        description: Subcontinent associated with the user.
+        tests:
+          - not_null
+
+      - name: continent
+        description: Continent associated with the user.
+        tests:
+          - not_null
+
+      - name: devicecategory
+        description: Device category used by the user (e.g., mobile, desktop, tablet).
+        tests:
+          - not_null

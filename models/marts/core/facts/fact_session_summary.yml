@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: fact_session_summary
+    description: >
+      Fact-level table derived from GA hits, enriched with session, user, and date dimensions.
+      Includes session metrics, campaign, traffic source, and country.
+
+    columns:
+      - name: session_id
+        description: Foreign key to dim_session.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_session')
+                field: session_id
+
+      - name: user_id
+        description: Foreign key to dim_user.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_user')
+                field: user_id
+
+      - name: event_date
+        description: Foreign key to dim_date.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date
+
+      - name: event_time
+        description: Event time extracted from session_start_time.
+
+      - name: devicecategory
+        description: Category of the device used by the user (mobile, desktop, tablet).
+
+      - name: source
+        description: Traffic source for the session.
+
+      - name: medium
+        description: Traffic medium for the session.
+
+      - name: campaign
+        description: Campaign identifier or name.
+
+      - name: country
+        description: Country associated with the session.
+
+      - name: session_pvs
+        description: Number of pageviews in the session.
+   
+
+      - name: session_hits
+        description: Total hits in the session.
+        tests:
+          - not_null

@@ -1,0 +1,18 @@
+version: 2
+
+
+exposures:
+  - name: Marketing Reports (Looker Studio)
+    type: analysis
+    maturity: medium
+    url: https://lookerstudio.google.com/u/0/reporting/325c3f3c-b8fd-468a-97b0-ef757fa55d8c/page/p_m63q9t54bd
+    description: "Exposure for Google Analytics transformed data models."
+    depends_on:
+      - ref('fact_transaction_summary')
+      - ref('fact_session_summary')
+      - ref('daily_marketing_funnel')
+ 
+
+    owner:
+      name: Dotun Taiwo
+      email: taiwo_dotun@yahoo.com

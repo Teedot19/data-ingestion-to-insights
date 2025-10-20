@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: fact_transaction_summary
+    description: >
+      Transaction-level fact table summarizing revenue, quantity, and products
+      for each transaction per session and user. Includes campaign and country context.
+
+    columns:
+      - name: session_id
+        description: Foreign key to dim_session.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_session')
+                field: session_id
+
+      - name: user_id
+        description: Foreign key to dim_user.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_user')
+                field: user_id
+
+      - name: transactionid
+        description: Unique transaction identifier (grain of the model).
+        tests:
+          - unique
+
+      - name: event_date
+        description: Foreign key to dim_date.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date
+
+      - name: country
+        description: Country associated with the transaction.
+       
+
+      - name: source
+        description: Traffic source for the session.
+ 
+
+      - name: campaign
+        description: Campaign identifier or name.
+    
+
+      - name: transaction_revenue_actual
+        description: Actual transaction revenue (rounded to 2 decimals)
+
+      - name: total_quantity
+        description: Total quantity of products sold in the transaction
+
+      - name: product_names
+        description: Array of product names included in the transaction.
+      

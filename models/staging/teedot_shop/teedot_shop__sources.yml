@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ga_analytics          # Source alias in dbt
+    schema: ga_export      # Actual Snowflake schema
+    tables:
+      - name: airbyte_ingest  # Source table name in dbt
+        identifier: airbyte_ingest  # Actual table name in Snowflake
+        description: "Raw data ingested from Google Analytics via Airbyte."
+
+

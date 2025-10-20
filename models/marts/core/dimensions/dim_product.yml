@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_product  # Keep the model name as in your SQL file
+    description: >
+      Dimension table of unique products derived from GA hits.
+      Each row represents a unique product with its category.
+
+    columns:
+      - name: product_id
+        description: Unique identifier for each product.
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: product_category
+        description: Category assigned to the product.
+        tests:
+          - not_null
