@@ -4,6 +4,17 @@ This project showcases an **end-to-end analytics engineering workflow** for Goog
 
 ---
 
+## Tech Stack
+| Layer | Tool |
+|-------|-----------------|
+| Data Ingestion | Airbyte |
+| Data Warehouse | Snowflake |
+| Transformation | dbt (Data Build Tool) |
+| Data Quality | dbt tests (duplicates, nulls, consistency) |
+| Visualization | Tableau |
+
+---
+
 ## Project Overview
 I managed a full-stack analytics pipeline, covering **data ingestion, transformation, and visualization**, with the goal of understanding user behavior, optimizing campaigns, and uncovering actionable insights.
 
@@ -41,15 +52,6 @@ I managed a full-stack analytics pipeline, covering **data ingestion, transforma
 
 ## Takeaways
 This project reinforced the importance of **clean, well-structured data** and **automated testing** in analytics engineering. By building a reliable data pipeline, teams can **trust metrics**, uncover actionable insights, and make **data-driven business decisions** with confidence.
-
----
-
-## Tech Stack
-- **Data Ingestion:** Airbyte  
-- **Data Warehouse:** Snowflake  
-- **Transformation:** dbt (Data Build Tool)  
-- **Visualization:** Tableau  
-- **Data Quality:** dbt tests (duplicates, nulls, consistency)
 
 ---
 
