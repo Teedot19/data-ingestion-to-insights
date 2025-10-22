@@ -40,3 +40,5 @@ models:
     marts:
       +materialized: table
       +schema: marts
+vars:
+  'dbt_date:time_zone': 'America/Los_Angeles'

@@ -10,8 +10,9 @@ WITH raw_hits AS (
 )
 
 SELECT
-    product_id,
-    product_name,
+    UPPER(TRIM(PRODUCT_ID)) AS product_id,
+    UPPER(TRIM(REPLACE(PRODUCT_NAME, '&quot;', '"'))) AS product_name,
     MAX(product_category) AS product_category
 FROM raw_hits
 GROUP BY product_id, product_name
+

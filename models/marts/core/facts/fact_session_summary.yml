@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fact_session_summary
-    description: >
+    description: 
       Fact-level table derived from GA hits, enriched with session, user, and date dimensions.
       Includes session metrics, campaign, traffic source, and country.
 
